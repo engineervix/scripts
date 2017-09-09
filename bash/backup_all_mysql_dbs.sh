@@ -14,5 +14,5 @@ databases=`mysql --batch --skip-column-names -e "SHOW DATABASES;" | grep -E -v "
 
 for db in $databases; do
   FILE_TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
-  mysqldump --force --opt --databases $db | gzip > "${BACKUP_DIR}/${db}_${FILE_TIMESTAMP}.gz"
+  mysqldump --force --opt --databases $db | gzip > "${BACKUP_DIR}/${db}_${FILE_TIMESTAMP}.sql.gz"
 done
