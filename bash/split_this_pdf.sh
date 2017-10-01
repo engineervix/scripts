@@ -7,4 +7,5 @@
 
 # For horizontal splits, replace y with x. 
 # you can, of course, combine the two for more complex solutions.
+# ref: https://unix.stackexchange.com/a/179398/
 mutool poster -y 2 input.pdf output.pdf
