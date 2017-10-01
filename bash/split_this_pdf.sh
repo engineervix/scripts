@@ -5,7 +5,7 @@
 # mutool comes in handy. Install it on Ubuntu 16.04 via:
 # sudo apt-get install mupdf-tools
 
-# For horizontal splits, replace y with x. 
+# For horizontal splits, replace x with y. 
 # you can, of course, combine the two for more complex solutions.
 # ref: https://unix.stackexchange.com/a/179398/
-mutool poster -y 2 input.pdf output.pdf
+mutool poster -x 2 input.pdf output.pdf
