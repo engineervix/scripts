@@ -10,14 +10,14 @@ based on:
 The script uses the following
     * `eyeD3 <https://eyed3.readthedocs.io/en/latest/>`_,
 to accomplish this task.
-**TODO**: improve the script vy:
+**TODO**: improve the script by:
     - adding some verbosity to inform the user what's going on
     - dynamically specify artist without hardcoding
 **CHANGELOG**:
     - YYYY-MMM-DD-ddd: Description here.
 
 In a nutshell, this is how it works:
-1. Select src Directory
+1. Select source directory which contains subdirectories representing albums
 2. Define constants for Artist, Album and any other common ID3 tag info
 3. For each mp3 File in the directory:
    - Define (by extracting from filename using regex or something) the track number
