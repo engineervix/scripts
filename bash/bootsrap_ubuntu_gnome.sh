@@ -50,6 +50,13 @@ echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> $HOME/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> $HOME/.bashrc
 source $HOME/.bashrc
 
+echo -e "\n\n\n# Add ~/.local/ to PATH" >> $HOME/.bash_profile
+echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+sudo apt-get install cookiecutter
+
+
 ## 4. Text Editors
 
 ### sublime text
@@ -173,7 +180,7 @@ sudo apt-get install -y nodejs
 #     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 #     sudo apt-get update && sudo apt-get install yarn
 
-sudo npm install -g grunt-cli grunt-init bower jshint jsonlint csslint eslint uglify-js yo
+sudo npm install -g grunt-cli grunt-init bower jshint jsonlint csslint eslint uglify-js yo mdpdf http-server
 
 
 ## 6. Web Browser -- Google Chrome
@@ -193,7 +200,7 @@ sudo apt install google-chrome-stable
 
 ## 7. Important CLI Tools
 
-sudo apt-get install pdftk imagemagick
+sudo apt-get install pdftk imagemagick pandoc
 
 
 ## 8. Postgres / PostGIS
@@ -205,6 +212,8 @@ sudo apt-get install postgresql postgresql-contrib postgis
 sudo -u postgres createuser --interactive
 LOCALUSER="$(whoami)"
 sudo -u postgres createdb $LOCALUSER
+
+sudo -H pip install psycopg2
 
 ## 9. LEMP
 
@@ -231,8 +240,22 @@ sudo apt-get install clementine vlc smplayer
 
 # 12. Others
 
-sudo apt-get install vokoscreen virtualbox audacity zeal
+sudo apt-get install vokoscreen sozi virtualbox audacity zeal
+
+echo -e "\n\n\nPlease install the Zeal docsets...\n\n\n"
 
 # 13. TeX Live Full
 
 # sudo apt-get install texlive-full
+
+
+# 14. Setup Git
+
+echo -n "Now Setting up Git. May I know your name please?"
+read yourname
+git config --global user.name "$yourname"
+
+echo -n "Thanks. What's your email address (for Git setup)?"
+read youremail
+git config --global user.email "$youremail"
+ echo "Thanks buddy."
