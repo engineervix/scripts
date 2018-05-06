@@ -9,17 +9,21 @@
 #
 # METADATA
 #
-#	- version		0.0.1
+#	- version		0.0.2
 #	- author		Victor Miti
 #	- licence		MIT
 #
 # HISTORY
 #
-#	2018-May-05		Initial Creation Date
+#	2018-May-05		* Initial Creation Date
+#	2018-May-06		* Renamed the file due to a typo
+#					* Added several other tools
+#					* Minor refactoring
 #
 # TODO
 #
-#	- Have one script to use either on a headless server or Desktop Setup
+#	- Have one script to use either on a headless server or Desktop Setup.
+#	  This could be done by passing an option as an argument variable
 #
 #============================================================================
 
@@ -33,7 +37,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 echo -e "\n\nCustomize your Shell: Use Color, Change Color Scheme\n\n"
 
 ## 3. Setup Python and other prerequisites
-sudo apt-get install git autoconf bison build-essential libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev zlib1g-dev libssl-dev libffi-dev python-dev python3-dev python-software-properties libncurses5-dev libgdbm3 libgdbm-dev python-gi python3-gi python-gi-cairo python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 tidy shellcheck ffmpeg
+sudo apt-get install git autoconf bison build-essential libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev zlib1g-dev libtiff5-dev libjpeg8-dev libssl-dev libffi-dev libfreetype6-dev liblcms2-dev libwebp-dev python-dev python3-dev python-software-properties libncurses5-dev libgdbm3 libgdbm-dev python-gi python3-gi python-gi-cairo python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 tcl8.6-dev tk8.6-dev python-tk python3-tk tidy shellcheck ffmpeg curl libcurl4-openssl-dev
 sudo apt-get install -y python-pip python3-pip pylint
 
 # https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get
@@ -126,11 +130,6 @@ sudo -H pip3 install powerline-status
 if [ $(dpkg-query -W -f='${Status}' vim 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   sudo apt-get install vim;
-fi
-
-if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  sudo apt-get install curl libcurl4-openssl-dev;
 fi
 
 sudo apt-get install vim-gnome vim-nox vim-nox-py2
@@ -233,7 +232,7 @@ sudo apt-get install mysql-server
 mysql_secure_installation
 sudo apt-get install php-fpm php-mysql
 
-echo -e "\n\nFollow the instructions at https://is.gd/odequj to finish the setup...\n\n"
+echo -e "\n\nFollow the instructions at https://is.gd/odequj to finish the LEMP setup...\n\n"
 
 
 ## 10. Important GUI Tools
@@ -247,9 +246,32 @@ sudo apt-get install clementine vlc smplayer
 
 # 12. Others
 
-sudo apt-get install vokoscreen sozi virtualbox audacity zeal
-
+sudo apt-get install vokoscreen sozi virtualbox k3b audacity zeal gparted ntfs-3g
 echo -e "\n\n\nPlease install the Zeal docsets...\n\n\n"
+
+### Grub Customizer
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+
+### Unetbootin
+sudo add-apt-repository ppa:gezakovacs/ppa
+sudo apt-get update
+sudo apt-get install unetbootin
+
+### WoeUSB
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt install woeusb
+
+### consider adding:
+####	Google Earth
+####	QGIS
+####	other GIS tools
+
+### consider setting up the machine for Android Development
+### consider setting up Thunderbird, Slack, and other communication tools
+
 
 # 13. TeX Live Full
 
@@ -265,4 +287,8 @@ git config --global user.name "$yourname"
 echo -n "Thanks. What's your email address (for Git setup)?"
 read youremail
 git config --global user.email "$youremail"
- echo "Thanks buddy."
+echo "Thanks buddy."
+
+echo -e "\n\n=================================================================="
+echo -e "\nThanks for Using this Script. Enjoy using Ubuntu Gnome and Build Awesome Stuff!"
+echo -e "\n=================================================================="
