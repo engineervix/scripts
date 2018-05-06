@@ -36,6 +36,13 @@ echo -e "\n\nCustomize your Shell: Use Color, Change Color Scheme\n\n"
 sudo apt-get install git autoconf bison build-essential libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev zlib1g-dev libssl-dev libffi-dev python-dev python3-dev python-software-properties libncurses5-dev libgdbm3 libgdbm-dev python-gi python3-gi python-gi-cairo python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 tidy shellcheck ffmpeg
 sudo apt-get install -y python-pip python3-pip pylint
 
+# https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt-get update
+sudo apt-get install python3.6
+sudo apt-get install python3-distutils
+curl https://bootstrap.pypa.io/get-pip.py | sudo python3.6
+
 sudo -H pip2 install --upgrade pip
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv virtualenvwrapper jedi pep8 autopep8 flake8 pycodestyle uwsgi
