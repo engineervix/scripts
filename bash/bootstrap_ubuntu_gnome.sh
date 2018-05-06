@@ -37,7 +37,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 echo -e "\n\nCustomize your Shell: Use Color, Change Color Scheme\n\n"
 
 ## 3. Setup Python and other prerequisites
-sudo apt-get install git autoconf bison build-essential libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev zlib1g-dev libtiff5-dev libjpeg8-dev libssl-dev libffi-dev libfreetype6-dev liblcms2-dev libwebp-dev python-dev python3-dev python-software-properties libncurses5-dev libgdbm3 libgdbm-dev python-gi python3-gi python-gi-cairo python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 tcl8.6-dev tk8.6-dev python-tk python3-tk tidy shellcheck ffmpeg curl libcurl4-openssl-dev
+sudo apt-get install git autoconf bison build-essential libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev zlib1g-dev libtiff5-dev libjpeg8-dev libssl-dev libffi-dev libfreetype6-dev liblcms2-dev libwebp-dev python-dev python3-dev python-software-properties libncurses5-dev libgdbm3 libgdbm-dev python-gi python3-gi python-gi-cairo python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 tcl8.6-dev tk8.6-dev python-tk python3-tk tidy shellcheck ffmpeg curl libcurl4-openssl-dev python-opencv python-numpy
 sudo apt-get install -y python-pip python3-pip pylint
 
 # https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get
